@@ -1,0 +1,91 @@
+/* screen configs */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: #f6f7f8;
+    font-family: 'Helvetica Neu', sans-serif;
+  }
+  
+  ul { list-style: none; } 
+  
+  h1 {
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+    color: #282828;
+  }
+  
+  .chatroom {
+    max-width: 500px;
+    min-height: 400px;
+    background-color: #121212; 
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 20px auto;
+  }
+  
+  .messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+  }
+  
+  .message-list {
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+  
+  .message-item {
+    padding: 10px;
+    border-radius: 1rem;
+    margin: 20px 0;
+  }
+  
+  .message-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Translator */
+  .item-trans {
+    position: relative;
+    background-color: #282828;
+    color: #f6f7f8;
+    text-align: left;
+    float: left;
+    clear: both;
+  }
+  
+  /* User */
+  .item-user {
+    position: relative;
+    background-color: #147efb;
+    color: #f6f7f8;
+    text-align: right;
+    float: right;
+    clear: both;
+  }
+  
+  .message-input {
+    display: flex;
+    padding: 20px 0;
+  }
+  
+  .message-input input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 3rem;
+    border: 1px solid #f6f7f8;
+  }
+  
+  .message-input button {
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+  }
