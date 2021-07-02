@@ -22,7 +22,7 @@ function sendMessage(){
         }
         input.value = '';
         writeLine(msg);
-        // translate(msg);
+        // receiveLine(msg);
     }
 }
 
@@ -41,21 +41,10 @@ function writeLine(text){
     messages.scrollTop = messages.scrollHeight;
 }
 
-function translate(text){
-    // Show message
-    let message = document.createElement('li');
-    message.classList.add('message-item', 'item-trans');
-    google.language.translate(text, "en", "ko", function(result)
-    {
-        if (!result.error){
-            message.innerHTML = result.translation;
-        }
-    });
-    messages.appendChild(message);
-    messages.scrollTop = messages.scrollHeight;
+function receiveLine(text){
     // show time
     let time = document.createElement('li');
-    time.classList.add('message-item', 'time-trans');
+    time.classList.add('message-item', 'time-receive');
     time.innerHTML = new Date().toLocaleTimeString();
     messages.appendChild(time);
     messages.scrollTop = messages.scrollHeight;
