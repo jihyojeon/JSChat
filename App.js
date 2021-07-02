@@ -10,9 +10,11 @@ input.addEventListener('keyup', function(e){ if(e.keyCode == 13) sendMessage()})
 // Messenger Functions
 function sendMessage(){
     let msg = input.value;
-    input.value = '';
-    writeLine(msg);
-    translate(msg);
+    if (msg !== ''){
+        input.value = '';
+        writeLine(msg);
+        translate(msg);
+    }
 }
 
 function writeLine(text){
