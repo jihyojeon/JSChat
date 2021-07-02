@@ -36,7 +36,7 @@
   }
   
   .message-list {
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 700px;
   }
 
@@ -54,7 +54,14 @@
   .message-item:last-child {
     margin-bottom: 0;
   }
-  
+
+  /* .date {
+    position: relative;
+    color: #808080;
+    text-align: center;
+    font-size: 70%;
+  } */
+
   /* Translator */
   .item-trans {
     position: relative;
@@ -63,6 +70,14 @@
     text-align: left;
     float: left;
     clear: both;
+  }
+
+  .time-trans {
+    position: relative;
+    color: #808080;
+    text-align: left;
+    float: left;
+    font-size: 70%;
   }
   
   /* User */
@@ -73,6 +88,14 @@
     text-align: right;
     float: right;
     clear: both;
+  }
+
+  .time-user {
+    position: relative;
+    color: #808080;
+    text-align: right;
+    float: right;
+    font-size: 70%;
   }
   
   .message-input {
