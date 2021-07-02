@@ -2,8 +2,7 @@
 let messages = document.querySelector('.message-list');
 let btn = document.querySelector('.btn');
 let input = document.querySelector('input');
-// let dateToday = new Date.toLocaleDateString();
-// let dateShown = ''
+let dateShown = ''
 
 // Click 'Send' button or press Enter Key
 btn.addEventListener('click', sendMessage);
@@ -13,23 +12,19 @@ input.addEventListener('keyup', function(e){ if(e.keyCode == 13) sendMessage()})
 function sendMessage(){
     let msg = input.value;
     if (msg !== ''){
+        if (dateShown !== new Date().toLocaleDateString()){
+            dateShown = new Date().toLocaleDateString();
+            let time = document.createElement('li');
+            time.classList.add('message-item', 'date');
+            time.innerHTML = dateShown;
+            messages.appendChild(time);
+            messages.scrollTop = messages.scrollHeight;
+        }
         input.value = '';
-        // showDate();
         writeLine(msg);
-        translate(msg);
+        // translate(msg);
     }
 }
-
-// function showDate(){
-//     if (dateShown !== dateToday){
-//         let d = document.createElement('li');
-//         d.classList.add('message-item', 'date');
-//         d.innerHTML = dateToday;
-//         dateShown = dateToday;
-//         messages.appendChild(d);
-//         messages.scrollTop = messages.scrollHeight;
-//     }
-// }
 
 function writeLine(text){
     // Show Messege
