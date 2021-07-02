@@ -63,6 +63,7 @@
     text-align: left;
     float: left;
     clear: both;
+    max-width: 330px;
   }
 
   .time-receive {
@@ -86,9 +87,10 @@
     position: relative;
     background-color: #147efb;
     color: #f6f7f8;
-    text-align: right;
+    text-align: left;
     float: right;
     clear: both;
+    max-width: 330px;
   }
 
   .time-user {
