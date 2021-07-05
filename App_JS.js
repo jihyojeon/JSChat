@@ -35,51 +35,61 @@ let uselessData = [
 // Variables
 let messages = document.querySelector('.message-list');
 let dateShown = '';
+
 // Click 'Send' button or press Enter Key
 // <JavaScript>
 let btn = document.querySelector('.btn');
 let input = document.querySelector('input');
-
-$(document).ready(function(){
-    $('.btn').click(function(){
-        sendMessage();
-    });
-    $('input').keydown(function(key) {
-        if (key.keyCode == 13) {
-            sendMessage();
-        }
-    });
-});
+btn.addEventListener('click', sendMessage);
+input.addEventListener('keyup', function(e){ if(e.keyCode == 13) sendMessage()});
 
 // Messenger Functions
 function sendMessage(){
-    let msg = $('input').val();
-    if (msg != ''){
+    let msg = input.value;
+    if (msg !== ''){
         if (dateShown !== new Date().toLocaleDateString()){
             dateShown = new Date().toLocaleDateString();
-            $('.message-list').append("<li class ='message-item date'>"+dateShown+"</li>");
-            $('.message-list').scrollTop($('.message-list').scrollHeight);
-            // messages.scrollTop = messages.scrollHeight;
+            let time = document.createElement('li');
+            time.classList.add('message-item', 'date');
+            time.innerHTML = dateShown;
+            messages.appendChild(time);
+            messages.scrollTop = messages.scrollHeight;
         }
-        $('input').val("");
-        writeLine(msg); // send
-        receiveLine(); // receive
+        input.value = '';
+        writeLine(msg);
+        receiveLine();
     }
 }
 
 function writeLine(text){
     // Show Messege
-    $('.message-list').append("<li class ='message-item item-user'>"+text+"</li>");
-    $('.message-list').append("<li class ='message-item time-user'>"+new Date().toLocaleTimeString()+"</li>");
-    $('.message-list').scrollTop($('.message-list').scrollHeight);}
+    let message = document.createElement('li');
+    message.classList.add('message-item', 'item-user');
+    message.innerHTML = text;
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
+    // Show time
+    let time = document.createElement('li');
+    time.classList.add('message-item', 'time-user');
+    time.innerHTML = new Date().toLocaleTimeString();
+    messages.appendChild(time);
+    messages.scrollTop = messages.scrollHeight;
+}
 
 function receiveLine(){
+    let message = document.createElement('li');
+    message.classList.add('message-item', 'item-receive');
     // Pick random data and delete it
     let n = Math.floor(Math.random()*uselessData.length); // 0-29
-    // Show Messege
-    $('.message-list').append("<li class ='message-item item-receive'>"+uselessData[n]+"</li>");
+    message.innerHTML = uselessData[n];
     uselessData.splice(n, 1);
+    // Show Messege
+    messages.appendChild(message);
+    messages.scrollTop = messages.scrollHeight;
     // show time
-    $('.message-list').append("<li class ='message-item time-receive'>"+new Date().toLocaleTimeString()+"</li>");
-    $('.message-list').scrollTop($('.message-list').scrollHeight);
+    let time = document.createElement('li');
+    time.classList.add('message-item', 'time-receive');
+    time.innerHTML = new Date().toLocaleTimeString();
+    messages.appendChild(time);
+    messages.scrollTop = messages.scrollHeight;
  }
