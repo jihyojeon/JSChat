@@ -32,14 +32,9 @@ let uselessData = [
     "The chicken and the ostrich are the closest living relatives of the Tyrannosaurus rex."
     ];
     
-// Variables
-let messages = document.querySelector('.message-list');
 let dateShown = '';
-// Click 'Send' button or press Enter Key
-// <JavaScript>
-let btn = document.querySelector('.btn');
-let input = document.querySelector('input');
 
+// Click 'Send' button or press Enter Key
 $(document).ready(function(){
     $('.btn').click(function(){
         sendMessage();
@@ -58,12 +53,12 @@ function sendMessage(){
         if (dateShown !== new Date().toLocaleDateString()){
             dateShown = new Date().toLocaleDateString();
             $('.message-list').append("<li class ='message-item date'>"+dateShown+"</li>");
-            $('.message-list').scrollTop($('.message-list').scrollHeight);
-            // messages.scrollTop = messages.scrollHeight;
+            $('.message-list').scrollTop($('.message-list').prop('scrollHeight'));
         }
         $('input').val("");
         writeLine(msg); // send
         receiveLine(); // receive
+        $('.message-list').scrollTop($('.message-list').prop('scrollHeight'));
     }
 }
 
@@ -71,7 +66,8 @@ function writeLine(text){
     // Show Messege
     $('.message-list').append("<li class ='message-item item-user'>"+text+"</li>");
     $('.message-list').append("<li class ='message-item time-user'>"+new Date().toLocaleTimeString()+"</li>");
-    $('.message-list').scrollTop($('.message-list').scrollHeight);}
+    $('.message-list').scrollTop($('.message-list').prop('scrollHeight'));
+}
 
 function receiveLine(){
     // Pick random data and delete it
@@ -81,5 +77,5 @@ function receiveLine(){
     uselessData.splice(n, 1);
     // show time
     $('.message-list').append("<li class ='message-item time-receive'>"+new Date().toLocaleTimeString()+"</li>");
-    $('.message-list').scrollTop($('.message-list').scrollHeight);
+    $('.message-list').scrollTop($('.message-list').prop('scrollHeight'));
  }
