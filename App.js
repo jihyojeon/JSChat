@@ -3,6 +3,8 @@ let messages = document.querySelector('.message-list');
 let btn = document.querySelector('.btn');
 let input = document.querySelector('input');
 let dateShown = '';
+
+// Useless Facts from https://bestlifeonline.com/useless-facts/
 let uselessData = [
     "No number from 1 to 999 includes the letter 'a' in its word form.",
     "Many oranges are actually green.",
