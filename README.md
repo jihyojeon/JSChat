@@ -2,9 +2,11 @@
 a simple chat application using HTML, CSS, JavaScript and jQuery.
 
 ## Try it !
-You can try this application here: https://codepen.io/jihyo-jeon/pen/KKmVeyp \
+You can try this application here: https://codepen.io/jihyo-jeon/pen/KKmVeyp
 
-![Test image](testImg.png)
+<p align="center">
+  <img width="460" height="300" src="testImg.png">
+</p>
 
 ## References
 Learnt how to set the files from: https://codepen.io/oieusouamiguel/pen/vbRrLm \
