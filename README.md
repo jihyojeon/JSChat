@@ -3,6 +3,7 @@ a simple chat application using HTML, CSS, JavaScript and jQuery.
 
 ### Try it !
 https://codepen.io/jihyo-jeon/pen/KKmVeyp
+![Test image](testImg.png)
 
 ### References
 Learnt how to set the files from: https://codepen.io/oieusouamiguel/pen/vbRrLm \
