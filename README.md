@@ -2,7 +2,8 @@
 a simple chat application using HTML, CSS, JavaScript and jQuery.
 
 ## Try it !
-https://codepen.io/jihyo-jeon/pen/KKmVeyp
+You can try this application here: https://codepen.io/jihyo-jeon/pen/KKmVeyp \
+
 ![Test image](testImg.png)
 
 ## References
