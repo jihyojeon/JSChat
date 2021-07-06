@@ -5,7 +5,7 @@ a simple chat application using HTML, CSS, JavaScript and jQuery.
 You can try this application here: https://codepen.io/jihyo-jeon/pen/KKmVeyp
 
 <p align="center">
-  <img width="550" src="testImg.png">
+  <img width="600" src="testImg.png">
 </p>
 
 ## References
